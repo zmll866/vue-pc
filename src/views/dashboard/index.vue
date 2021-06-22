@@ -1,15 +1,18 @@
 <template>
   <div class="dashboard-container">
     <div class="dashboard-text">name: {{ name }}</div>
+    {{ token }}
+    <my-com />
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapState } from 'vuex'
 
 export default {
   name: 'Dashboard',
   computed: {
+    ...mapState('user', ['token']),
     ...mapGetters([
       'name'
     ])

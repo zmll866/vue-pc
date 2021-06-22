@@ -34,7 +34,20 @@ Vue.use(ElementUI, { locale })
 // Vue.use(ElementUI)
 
 Vue.config.productionTip = false
-
+Vue.component('my-com', {
+  data () {
+    return {
+      msg: 'test'
+    }
+  },
+  render (creatElement, context) {
+    // return creatElement('div', 'hello')
+    const arr = []
+    arr.push(<div>nihao</div>)
+    arr.push(<div>hello</div>)
+    return <div>{arr}</div>
+  }
+})
 new Vue({
   el: '#app',
   router,
